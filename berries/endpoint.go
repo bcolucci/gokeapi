@@ -1,8 +1,9 @@
 package berries
 
 import (
+	"strconv"
 	"errors"
-	"pokeapi/endpoints"
+	"gokeapi/endpoints"
 
 	cache "github.com/patrickmn/go-cache"
 )
@@ -43,4 +44,16 @@ func (e *Endpoint) GetItems(current *endpoints.ResourceList) []Berry {
 		items[idx] = *NewBerry(result.URL, e.mem)
 	}
 	return items
+}
+
+func (e *Endpoint) GetItemById(id int) *Berry {
+	var berry Berry
+	endpoints.FetchResourceItem(e.url+"/"+strconv.Itoa(id), e.mem, &berry)
+	return &berry
+}
+
+func (e *Endpoint) GetItemByName(name string) *Berry {
+	var berry Berry
+	endpoints.FetchResourceItem(e.url+"/"+name, e.mem, &berry)
+	return &berry
 }

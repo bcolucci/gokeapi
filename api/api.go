@@ -1,7 +1,7 @@
 package api
 
 import (
-	"pokeapi/berries"
+	"gokeapi/berries"
 	"time"
 
 	"github.com/patrickmn/go-cache"

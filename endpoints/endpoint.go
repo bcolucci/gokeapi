@@ -6,4 +6,6 @@ type Endpoint interface {
 	FetchPreviousResourceList(current *ResourceList) *ResourceList
 	GetItem(current *ResourceList, idx int) interface{}
 	GetItems(current *ResourceList) []interface{}
+	GetItemById(id int) interface{}
+	GetItemByName(name string) interface{}
 }
