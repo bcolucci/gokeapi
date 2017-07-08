@@ -7,7 +7,7 @@ type PastMoveStatValues struct {
 	PowerPoints       int              `json:"pp"`
 	EffectEntries     []VerboseEffect  `json:"effect_entries"`
 	TypeProxy         NamedAPIResource `json:"type"`
-	Type              Type
 	VersionGroupProxy NamedAPIResource `json:"version_group"`
-	VersionGroup      VersionGroup
+	Type              *Type
+	VersionGroup      *VersionGroup
 }

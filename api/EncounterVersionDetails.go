@@ -1,7 +1,7 @@
 package api
 
-type VersionGameIndex struct {
-	GameIndex    int              `json:"game_index"`
+type EncounterVersionDetails struct {
+	Rate         int              `json:"rate"`
 	VersionProxy NamedAPIResource `json:"version"`
 	Version      *Version
 }

@@ -8,8 +8,8 @@ type Stat struct {
 	AffectingMoves       MoveStatAffectSets   `json:"affecting_moves"`
 	AffectingNatures     NatureStatAffectSets `json:"affecting_natures"`
 	CharacteristicsProxy []APIResource        `json:"characteristics"`
+	MoveDamageClassProxy NamedAPIResource     `json:"move_damage_class"`
+	Names                []Name               `json:"names"`
 	Characteristics      []Characteristic
-	MoveDamageClassProxy NamedAPIResource `json:"move_damage_class"`
-	MoveDamageClass      MoveDamageClass
-	Names                []Name `json:"names"`
+	MoveDamageClass      *MoveDamageClass
 }

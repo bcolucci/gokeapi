@@ -13,7 +13,7 @@ type Berry struct {
 	FirmnessProxy        NamedAPIResource `json:"firmness"`
 	Flavors              []BerryFlavorMap `json:"flavors"`
 	ItemProxy            NamedAPIResource `json:"item"`
-	NaturalGiftType      Type
-	Firmness             BerryFirmness
-	Item                 Item
+	Firmness             *BerryFirmness
+	NaturalGiftType      *Type
+	Item                 *Item
 }

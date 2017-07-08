@@ -4,16 +4,16 @@ type Generation struct {
 	ID                  int                `json:"id"`
 	Name                string             `json:"name"`
 	AbilitiesProxy      []NamedAPIResource `json:"abilities"`
-	Abilities           []Ability
-	Names               []Name           `json:"names"`
-	MainRegionProxy     NamedAPIResource `json:"main_region"`
-	MainRegion          Region
+	Names               []Name             `json:"names"`
+	MainRegionProxy     NamedAPIResource   `json:"main_region"`
 	MovesProxy          []NamedAPIResource `json:"moves"`
-	Moves               []Move
 	PokemonSpeciesProxy []NamedAPIResource `json:"pokemon_species"`
-	PokemonSpecies      []PokemonSpecies
-	TypesProxy          []Type `json:"types"`
-	Types               []Type
+	TypesProxy          []Type             `json:"types"`
 	VersionGroupsProxy  []NamedAPIResource `json:"version_groups"`
+	Abilities           []Ability
 	VersionGroups       []VersionGroup
+	Moves               []Move
+	PokemonSpecies      []PokemonSpecies
+	Types               []Type
+	MainRegion          *Region
 }

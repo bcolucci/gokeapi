@@ -5,5 +5,5 @@ type Version struct {
 	Name              string           `json:"name"`
 	Names             []Name           `json:"names"`
 	VersionGroupProxy NamedAPIResource `json:"version_group"`
-	VersionGroup      VersionGroup
+	VersionGroup      *VersionGroup
 }

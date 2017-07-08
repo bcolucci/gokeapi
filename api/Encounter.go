@@ -6,6 +6,6 @@ type Encounter struct {
 	Chance               int                `json:"chance"`
 	MethodProxy          NamedAPIResource   `json:"method"`
 	ConditionValuesProxy []NamedAPIResource `json:"condition_values"`
-	Method               EncounterMethod
 	ConditionValues      []EncounterConditionValue
+	Method               *EncounterMethod
 }

@@ -1,5 +1,17 @@
 package api
 
 type VersionGroup struct {
-	//TODO https://pokeapi.co/docsv2/#version-groups
+	ID                    int                `json:"id"`
+	Name                  string             `json:"name"`
+	Order                 int                `json:"order"`
+	GenerationProxy       NamedAPIResource   `json:"generation"`
+	MoveLearnMethodsProxy []NamedAPIResource `json:"move_learn_methods"`
+	PokedexesProxy        []NamedAPIResource `json:"pokedexes"`
+	RegionsProxy          []NamedAPIResource `json:"regions"`
+	VersionsProxy         []NamedAPIResource `json:"versions"`
+	MoveLearnMethods      []MoveLearnMethod
+	Pokedexes             []Pokedex
+	Regions               []Region
+	Versions              []Version
+	Generation            *Generation
 }

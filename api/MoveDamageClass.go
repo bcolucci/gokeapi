@@ -5,6 +5,6 @@ type MoveDamageClass struct {
 	Name         string             `json:"name"`
 	Descriptions []Description      `json:"descriptions"`
 	MovesProxy   []NamedAPIResource `json:"moves"`
+	Names        []Name             `json:"names"`
 	Moves        []Move
-	Names        []Name `json:"names"`
 }

@@ -1,7 +1,7 @@
 package api
 
 type Description struct {
-	Text          string           `json:"description"`
+	Description   string           `json:"description"`
 	LanguageProxy NamedAPIResource `json:"language"`
-	Language      Language
+	Language      *Language
 }
