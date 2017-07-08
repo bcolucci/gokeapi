@@ -1,5 +1,7 @@
 package api
 
 type TypePokemon struct {
-	//TODO
+	Slot         int              `json:"slot"`
+	PokemonProxy NamedAPIResource `json:"pokemon"`
+	Pokemon      Pokemon
 }

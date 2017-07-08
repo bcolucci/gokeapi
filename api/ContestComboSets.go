@@ -1,5 +1,6 @@
 package api
 
 type ContestComboSets struct {
-	//TODO
+	Normal ContestComboDetail `json:"normal"`
+	Super  ContestComboDetail `json:"super"`
 }

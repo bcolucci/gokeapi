@@ -1,5 +1,7 @@
 package api
 
 type MoveStatChange struct {
-	//TODO
+	Change    int              `json:"change"`
+	StatProxy NamedAPIResource `json:"stat"`
+	Stat      Stat
 }

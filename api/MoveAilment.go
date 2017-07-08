@@ -1,5 +1,9 @@
 package api
 
 type MoveAilment struct {
-	//TODO
+	ID         int                `json:"id"`
+	Name       string             `json:"name"`
+	MovesProxy []NamedAPIResource `json:"moves"`
+	Moves      []Move
+	Names      []Name `json:"names"`
 }

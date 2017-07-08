@@ -14,7 +14,7 @@ type Item struct {
 	FlavorTextEntries   []VersionGroupFlavorText `json:"flavor_text_entries"`
 	GameIndices         []GenerationGameIndex    `json:"game_indices"`
 	Names               []Name                   `json:"names"`
-	Sprites             map[string]string        `json:"sprites"`
+	Sprites             ItemSprites              `json:"sprites"`
 	HeldByPokemon       []ItemHolderPokemon      `json:"held_by_pokemon"`
 	BabyTriggerForProxy APIResource              `json:"baby_trigger_for"`
 	BabyTriggerFor      EvolutionChain

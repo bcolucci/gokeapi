@@ -4,7 +4,7 @@ type MoveMetaData struct {
 	AilmentProxy  NamedAPIResource `json:"ailment"`
 	Ailment       MoveAilment
 	CategoryProxy NamedAPIResource `json:"category"`
-	Category      Move
+	Category      MoveCategory
 	MinHits       int `json:"min_hits"`
 	MaxHits       int `json:"max_hits"`
 	MinTurns      int `json:"min_turns"`

@@ -1,5 +1,11 @@
 package api
 
 type Machine struct {
-	//TODO https://pokeapi.co/docsv2/#machines
+	ID                int              `json:"id"`
+	ItemProxy         NamedAPIResource `json:"item"`
+	Item              Item
+	MoveProxy         NamedAPIResource `json:"move"`
+	Move              Move
+	VersionGroupProxy NamedAPIResource `json:"version_group"`
+	VersionGroup      VersionGroup
 }
