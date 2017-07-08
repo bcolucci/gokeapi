@@ -3,11 +3,13 @@ package main
 import (
 	"gokeapi/api"
 	"gokeapi/helpers"
+	"gokeapi/models"
 )
 
 func main() {
-	cache := api.NewCache("./cache", 60)
-	resourceRetriever := api.NewResourceRetriever(cache)
-	client := api.NewAPI("http://pokeapi.co/api/v2", resourceRetriever)
-	helpers.PrintPrettyJSON(client.Get("/type/3/"))
+	cache := helpers.NewCache("./cache", 60*24)
+	client := api.NewAPI("http://pokeapi.co/api/v2", cache)
+	jp := &models.Language{}
+	client.Populate("/language/1/", jp)
+	helpers.PrintPrettyJSON(jp)
 }
