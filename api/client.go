@@ -9,8 +9,9 @@ import (
 const BaseURL = "http://pokeapi.co/api/v2"
 
 type Client struct {
-	BaseURL string
-	cache   *helpers.CacheWrapper
+	BaseURL   string
+	Languages *LanguagesEndpoint
+	cache     *helpers.CacheWrapper
 }
 
 func NewClient() *Client {
@@ -19,7 +20,9 @@ func NewClient() *Client {
 }
 
 func NewCustomClient(baseURL string, cache *helpers.CacheWrapper) *Client {
-	return &Client{baseURL, cache}
+	client := &Client{BaseURL: baseURL, cache: cache}
+	client.Languages = NewLanguagesEndpoint(client)
+	return client
 }
 
 func (client *Client) Populate(uri string, entity interface{}) {

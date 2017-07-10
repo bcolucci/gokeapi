@@ -1,17 +1,16 @@
-package endpoints
+package api
 
 import (
-	"gokeapi/api"
 	"gokeapi/models"
 	"strconv"
 )
 
 type LanguagesEndpoint struct {
 	BaseURI string
-	client  *api.Client
+	client  *Client
 }
 
-func NewLanguagesEndpoint(client *api.Client) *LanguagesEndpoint {
+func NewLanguagesEndpoint(client *Client) *LanguagesEndpoint {
 	return &LanguagesEndpoint{"/language", client}
 }
 
