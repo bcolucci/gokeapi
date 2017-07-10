@@ -3,7 +3,7 @@ package helpers
 import "github.com/DannyBen/filecache"
 
 type CacheWrapper struct {
-	intance *filecache.Handler
+	instance *filecache.Handler
 }
 
 func NewCache(dir string, ttlMinutes float64) *CacheWrapper {
@@ -12,9 +12,9 @@ func NewCache(dir string, ttlMinutes float64) *CacheWrapper {
 }
 
 func (c *CacheWrapper) Get(key string) []byte {
-	return c.intance.Get(key)
+	return c.instance.Get(key)
 }
 
 func (c *CacheWrapper) Set(key string, bytes []byte) {
-	c.intance.Set(key, bytes)
+	c.instance.Set(key, bytes)
 }

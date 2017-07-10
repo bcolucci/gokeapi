@@ -6,16 +6,23 @@ import (
 	"net/http"
 )
 
-type API struct {
+const BaseURL = "http://pokeapi.co/api/v2"
+
+type Client struct {
 	BaseURL string
 	cache   *helpers.CacheWrapper
 }
 
-func NewAPI(baseURL string, cache *helpers.CacheWrapper) *API {
-	return &API{baseURL, cache}
+func NewClient() *Client {
+	cache := helpers.NewCache("./cache", 60*24*7)
+	return NewCustomClient(BaseURL, cache)
 }
 
-func (client *API) Populate(uri string, entity interface{}) {
+func NewCustomClient(baseURL string, cache *helpers.CacheWrapper) *Client {
+	return &Client{baseURL, cache}
+}
+
+func (client *Client) Populate(uri string, entity interface{}) {
 	resourceURL := client.BaseURL + uri
 	resource := client.cache.Get(resourceURL)
 	if resource != nil {
